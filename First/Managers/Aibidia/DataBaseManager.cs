@@ -13,7 +13,7 @@ namespace First.Managers.Aibidia
 
         public DataBaseManager()
         {
-            _context = new AibidiaDatabaseContext(); 
+            _context = new AibidiaDatabaseContext();
         }
 
         public List<Continent> GetContinents()
