@@ -28,5 +28,10 @@ namespace First.Controllers
         {
             return View(manager.GetCountries());
         }
+
+        public IActionResult Companies()
+        {
+            return View(manager.GetCompanies());
+        }
     }
 }
