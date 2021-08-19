@@ -1,0 +1,9 @@
+﻿@model IList<First.Storage.Entities.Country>
+
+<html>
+<h1>Countries</h1>
+@foreach (var country in Model)
+{
+    <div>@country.Name - @country.Continent.Name</div>
+}
+</html>

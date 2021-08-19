@@ -18,5 +18,15 @@ namespace First.Controllers
         {
             return View(manager.GetContinents());
         }
+
+        public IActionResult Continents()
+        {
+            return View(manager.GetContinents());
+        }
+
+        public IActionResult Countries()
+        {
+            return View(manager.GetCountries());
+        }
     }
 }

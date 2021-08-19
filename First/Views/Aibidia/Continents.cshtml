@@ -1,0 +1,9 @@
+﻿@model IList<First.Storage.Entities.Continent>
+
+<html>
+<h1>Continents</h1>
+@foreach (var continent in Model)
+{ 
+    <div>@continent.Name</div>
+}
+</html>

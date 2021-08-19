@@ -17,7 +17,7 @@ namespace First.Storage.Entities
         public virtual Country Country2 { get; set; }
 
         public int Date { get; set; }
-        public int AgreemetText { get; set; }
+        public int AgreementText { get; set; }
 
     }
 }

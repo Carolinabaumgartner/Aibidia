@@ -1,15 +1,14 @@
 ﻿using First.Storage;
 using First.Storage.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace First.Managers.Aibidia
 {
     public class DataBaseManager
     {
-        private AibidiaDatabaseContext _context;
+        private readonly AibidiaDatabaseContext _context;
 
         public DataBaseManager()
         {
@@ -19,6 +18,11 @@ namespace First.Managers.Aibidia
         public List<Continent> GetContinents()
         {
             return _context.Continents.ToList();
+        }
+
+        public List<Country> GetCountries()
+        {
+            return _context.Countries.Include(c => c.Continent).ToList();
         }
     }
 }
