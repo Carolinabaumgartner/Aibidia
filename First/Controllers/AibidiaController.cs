@@ -24,9 +24,12 @@ namespace First.Controllers
             return View(manager.GetContinents());
         }
 
-        public IActionResult Countries()
+        public IActionResult Countries(int? id)
         {
-            return View(manager.GetCountries());
+            if (id is null)
+                return View(manager.GetCountries());
+            else
+                return View(manager.GetCountriesByContinentId(id.Value));
         }
 
         public IActionResult Companies()
@@ -39,7 +42,7 @@ namespace First.Controllers
             return View(manager.GetRulings());
         }
 
-        public IActionResult  Agreements()
+        public IActionResult Agreements()
         {
             return View(manager.GetAgreements());
         }

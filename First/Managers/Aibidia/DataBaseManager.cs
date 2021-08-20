@@ -25,6 +25,13 @@ namespace First.Managers.Aibidia
             return _context.Countries.Include(c => c.Continent).ToList();
         }
 
+        public List<Country> GetCountriesByContinentId(int continentId)
+        {
+            return _context.Countries.Include(c => c.Continent)
+                .Where(c => c.ContinentID == continentId)
+                .ToList();
+        }
+
         public List<Company> GetCompanies()
         {
             return _context.Companies.Include(c => c.Country).ThenInclude(c => c.Continent).ToList();

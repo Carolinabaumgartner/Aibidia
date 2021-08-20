@@ -17,9 +17,9 @@
             @foreach (var continent in Model)
             {
                 <tr>
-                    <td>@continent.Name</td>
-                    
-
+                    <td>
+                        <a href="~/Aibidia/Countries/@continent.ID">@continent.Name</a>
+                    </td>
                 </tr>
             }
         </tbody>
