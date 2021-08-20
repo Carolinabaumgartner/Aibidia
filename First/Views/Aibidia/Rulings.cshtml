@@ -2,8 +2,35 @@
 
 <html>
 <h1>Rulings</h1>
-@foreach (var ruling in Model)
-{
-    <div>@ruling.RulingText - @ruling.Company.Name</div>
-}
+<div>
+
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                <th>Ruling Text</th>
+                <th>Company </th>
+                <th>Country</th>
+                <th>Continent</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var ruling in Model)
+            {
+            <tr>
+                <td>@ruling.RulingText</td>
+                <td>@ruling.Company.Name</td>
+                <td>@ruling.Company.Country.Name</td>
+                <td>@ruling.Company.Country.Continent.Name</td>
+
+
+
+
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
 </html>

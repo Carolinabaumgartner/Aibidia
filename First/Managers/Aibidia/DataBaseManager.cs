@@ -32,11 +32,19 @@ namespace First.Managers.Aibidia
 
         public List<Ruling> GetRulings()
         {
-            return _context.Rulings.Include(c => c.Company).ToList();
+            return _context.Rulings.Include(c => c.Company).ThenInclude(c => c.Country).ThenInclude(c => c.Continent).ToList();
         }
 
+        public List<Agreement> GetAgreements()
+        {
+            return _context.Agreements.Include(c => c.Company1).ThenInclude(c1 => c1.Country).ThenInclude(contry1 => contry1.Continent)
+                .Include(c => c.Company2).ThenInclude(c2 => c2.Country).ThenInclude(contry2 => contry2.Continent).ToList();
+        }
 
-
+        public List<Legislation> GetLegislations()
+        {
+            return _context.Legislations.Include(c => c.Country).ThenInclude(c => c.Continent).ToList();
+        }
 
     }
 

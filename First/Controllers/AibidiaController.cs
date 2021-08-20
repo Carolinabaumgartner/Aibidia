@@ -38,5 +38,15 @@ namespace First.Controllers
         {
             return View(manager.GetRulings());
         }
+
+        public IActionResult  Agreements()
+        {
+            return View(manager.GetAgreements());
+        }
+
+        public IActionResult Legislations()
+        {
+            return View(manager.GetLegislations());
+        }
     }
 }

@@ -10,6 +10,9 @@ namespace First.Storage
         public DbSet<Country> Countries { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<Ruling> Rulings { get; set; }
+        public DbSet<Agreement> Agreements { get; set; }
+        public DbSet<Legislation> Legislations { get; set; }
+
         public string DbPath { get; private set; }
 
         public AibidiaDatabaseContext()
@@ -21,5 +24,10 @@ namespace First.Storage
         // special "local" folder for your platform.
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite($"Data Source={DbPath}");
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Agreement>().HasKey(a => new { a.Company1ID, a.Company2ID });
+        }
     }
 }

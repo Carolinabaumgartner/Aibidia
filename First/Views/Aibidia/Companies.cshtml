@@ -1,9 +1,32 @@
 ﻿@model IList<First.Storage.Entities.Company>
 
+
 <html>
 <h1>Companies</h1>
-@foreach (var company in Model)
-{
-<div>@company.Name - @company.Country.Name - @company.Country.Continent.Name</div> 
-}
+<div>
+
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Country</th>
+                <th>Continent</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var company in Model)
+            {
+            <tr>
+                <td>@company.Name</td>
+                <td>@company.Country.Name</td>
+                <td>@company.Country.Continent.Name</td>
+
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
 </html>

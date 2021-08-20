@@ -10,6 +10,7 @@ namespace First.Storage.Entities
     {
                   
         public int ID { get; set; }
+        public string LegislationText { get; set; }
 
         [ForeignKey(nameof(CountryID))]
         public int CountryID { get; set; }
