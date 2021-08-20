@@ -1,6 +1,7 @@
 ﻿using First.Storage.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.IO;
 
 namespace First.Storage
 {
@@ -17,7 +18,8 @@ namespace First.Storage
 
         public AibidiaDatabaseContext()
         {
-            DbPath = @$"{AppDomain.CurrentDomain.BaseDirectory}Database\Aibidia_Tables.db";
+            string[] paths = {AppDomain.CurrentDomain.BaseDirectory, "Database", "Aibidia_Tables.db"};
+            DbPath = Path.Combine(paths);
         }
 
         // The following configures EF to create a Sqlite database file in the
