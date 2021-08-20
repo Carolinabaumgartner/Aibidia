@@ -1,0 +1,28 @@
+﻿@model IList<First.Storage.Entities.Continent>
+
+<html>
+<h1>Continent</h1>
+<div>
+
+    <table class="table-bordered">
+        <thead>
+            <tr>
+
+               <th>Continent</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var continent in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="~/Aibidia/Countries/@continent.ID">@continent.Name</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</html>
