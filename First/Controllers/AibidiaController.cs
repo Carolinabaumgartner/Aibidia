@@ -33,5 +33,10 @@ namespace First.Controllers
         {
             return View(manager.GetCompanies());
         }
+
+        public IActionResult Rulings()
+        {
+            return View(manager.GetRulings());
+        }
     }
 }

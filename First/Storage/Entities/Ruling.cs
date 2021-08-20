@@ -15,8 +15,8 @@ namespace First.Storage.Entities
         public int CompanyID { get; set; }
         public virtual Company Company { get; set; }
 
-        public int Date { get; set; }
-        public int RulingText { get; set; }
+        public string Date { get; set; }
+        public string RulingText { get; set; }
 
     }
 }

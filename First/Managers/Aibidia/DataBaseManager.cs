@@ -26,8 +26,18 @@ namespace First.Managers.Aibidia
         }
 
         public List<Company> GetCompanies()
-            {
+        {
             return _context.Companies.Include(c => c.Country).ThenInclude(c => c.Continent).ToList();
         }
+
+        public List<Ruling> GetRulings()
+        {
+            return _context.Rulings.Include(c => c.Company).ToList();
+        }
+
+
+
+
     }
+
 }

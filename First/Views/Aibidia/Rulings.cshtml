@@ -1,0 +1,9 @@
+﻿@model IList<First.Storage.Entities.Ruling>
+
+<html>
+<h1>Rulings</h1>
+@foreach (var ruling in Model)
+{
+    <div>@ruling.RulingText - @ruling.Company.Name</div>
+}
+</html>
