@@ -1,0 +1,38 @@
+﻿@model IList<First.Storage.Entities.Agreement>
+
+<html>
+<h1>Agreements</h1>
+<div>
+
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                <th>Agreement Text</th>
+                <th>Company 1</th>
+                <th>Country</th>
+                <th>Continent</th>
+                <th>Company 2</th>
+                <th>Country</th>
+                <th>Continent</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var agreement in Model)
+            {
+                <tr>
+                    <td>@agreement.AgreementText</td>
+                    <td>@agreement.Company1.Name</td>
+                    <td>@agreement.Company1.Country.Name</td>
+                    <td>@agreement.Company1.Country.Continent.Name</td>
+                    <td>@agreement.Company2.Name</td>
+                    <td>@agreement.Company2.Country.Name</td>
+                    <td>@agreement.Company2.Country.Continent.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</html>
+
+

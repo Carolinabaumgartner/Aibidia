@@ -1,14 +1,11 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@model IList<First.Storage.Entities.Continent>
+﻿@model IList<First.Storage.Entities.Continent>
 
 <html>
-<h1>Continents</h1>
-@foreach (var continent in Model)
-{ 
-    <div>@continent.Name</div>
-}
+<h1>Pages</h1>
+<div><a href="~/Aibidia/Continents">Continents</a></div>
+<div><a href="~/Aibidia/Countries">Countries</a></div>
+<div><a href="~/Aibidia/Companies">Companies</a></div>
+<div><a href="~/Aibidia/Rulings">Rulings</a></div>
+<div><a href="~/Aibidia/Agreements">Agreements</a></div>
+<div><a href="~/Aibidia/Legislations">Legislations</a></div>
 </html>

@@ -1,0 +1,33 @@
+﻿@model IList<First.Storage.Entities.Legislation>
+
+
+<html>
+<h1>Legislations</h1>
+<div>
+
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                
+                <th>Legislation Text</th>
+                <th>Country</th>
+                <th>Continent</th>                
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var legislation in Model)
+            {
+                <tr>
+                    <td>@legislation.LegislationText</td>
+                    <td>@legislation.Country.Name</td>
+                    <td>@legislation.Country.Continent.Name</td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</html>

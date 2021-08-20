@@ -18,5 +18,43 @@ namespace First.Controllers
         {
             return View(manager.GetContinents());
         }
+
+        public IActionResult Continents()
+        {
+            return View(manager.GetContinents());
+        }
+
+        public IActionResult Countries(int? id)
+        {
+            if (id is null)
+                return View(manager.GetCountries());
+            else
+                return View(manager.GetCountriesByContinentId(id.Value));
+        }
+
+        public IActionResult Companies(int? id)
+        {
+           if (id is null)
+            return View(manager.GetCompanies());
+           else
+                return View(manager.GetCompaniesByCountryId(id.Value)); 
+
+        }
+
+
+        public IActionResult Rulings()
+        {
+            return View(manager.GetRulings());
+        }
+
+        public IActionResult Agreements()
+        {
+            return View(manager.GetAgreements());
+        }
+
+        public IActionResult Legislations()
+        {
+            return View(manager.GetLegislations());
+        }
     }
 }
