@@ -18,7 +18,7 @@ namespace First.Storage
 
         public AibidiaDatabaseContext()
         {
-            string[] paths = {AppDomain.CurrentDomain.BaseDirectory, @"Database", "Aibidia_Tables.db"};
+            string[] paths = {AppDomain.CurrentDomain.BaseDirectory, "Database", "Aibidia_Tables.db"};
             DbPath = Path.Combine(paths);
         }
 
