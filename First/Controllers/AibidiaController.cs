@@ -32,10 +32,15 @@ namespace First.Controllers
                 return View(manager.GetCountriesByContinentId(id.Value));
         }
 
-        public IActionResult Companies()
+        public IActionResult Companies(int? id)
         {
+           if (id is null)
             return View(manager.GetCompanies());
+           else
+                return View(manager.GetCompaniesByCountryId(id.Value)); 
+
         }
+
 
         public IActionResult Rulings()
         {
